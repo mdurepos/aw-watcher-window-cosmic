@@ -1,0 +1,14 @@
+[Unit]
+Description=ActivityWatch Window Watcher for COSMIC
+Documentation=https://github.com/ActivityWatch/aw-watcher-window-cosmic
+After=activitywatch.service
+Requires=activitywatch.service
+
+[Service]
+Type=simple
+ExecStart=/home/mdurepos/.local/bin/poetry run -C /home/mdurepos/src/aw-watcher-window-cosmic aw-watcher-window-cosmic
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
